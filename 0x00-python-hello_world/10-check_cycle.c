@@ -16,6 +16,8 @@ int check_cycle(listint_t *list)
 
 	while (1)
 	{
+		if (!new)
+			return (0);
 		if (new == last)
 			return (1);
 		new = new->next;
