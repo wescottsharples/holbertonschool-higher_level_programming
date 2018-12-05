@@ -24,7 +24,6 @@ listint_t *insertion(listint_t *ptr, int number, int flag)
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *ptr, *next;
-	int i;
 
 	ptr = *head;
 
@@ -34,7 +33,7 @@ listint_t *insert_node(listint_t **head, int number)
 	if (number < ptr->n)
 		return (insertion(ptr, number, 1));
 
-	for (i = 0; ptr; i++)
+	while (ptr)
 	{
 		next = ptr->next;
 
