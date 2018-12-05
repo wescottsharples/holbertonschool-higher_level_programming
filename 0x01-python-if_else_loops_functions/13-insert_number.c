@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "lists.h"
 
-listint_t *insertion(listint_t *ptr, int number)
+listint_t *insertion(listint_t *ptr, int number, int flag)
 {
 	listint_t *new;
 
@@ -10,8 +10,13 @@ listint_t *insertion(listint_t *ptr, int number)
 		return (NULL);
 
 	new->n = number;
-	new->next = ptr->next;
-	ptr->next = new;
+	if (flag)
+		new->next = ptr;
+	else
+	{
+		new->next = ptr->next;
+		ptr->next = new;
+	}
 
 	return (new);
 }
@@ -27,16 +32,16 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 
 	if (number < ptr->n)
-		return (insertion(ptr, number));
+		return (insertion(ptr, number, 1));
 
 	for (i = 0; ptr; i++)
 	{
 		next = ptr->next;
 
 		if (!next)
-			return (insertion(ptr, number));
+			return (insertion(ptr, number, 0));
 		if (number < next->n)
-			return (insertion(ptr, number));
+			return (insertion(ptr, number, 0));
 
 		ptr = next;
 	}
