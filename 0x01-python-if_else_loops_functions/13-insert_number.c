@@ -11,7 +11,9 @@ listint_t *insertion(listint_t *ptr, int number, int flag)
 
 	new->n = number;
 	if (flag)
+	{
 		new->next = ptr;
+	}
 	else
 	{
 		new->next = ptr->next;
@@ -31,7 +33,10 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 
 	if (number < ptr->n)
-		return (insertion(ptr, number, 1));
+	{
+		*head = (insertion(ptr, number, 1));
+		return (*head);
+	}
 
 	while (ptr)
 	{
