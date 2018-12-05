@@ -1,6 +1,14 @@
 #include <stdlib.h>
 #include "lists.h"
 
+/**
+ * insertion - creates and inserts a node
+ * @ptr: node to be inserted after
+ * @number: number to be contained within new node
+ * @flag: flag to signal if ptr is head of linked list
+ *
+ * Return: Address of newly created node on success, else NULL.
+ */
 listint_t *insertion(listint_t *ptr, int number, int flag)
 {
 	listint_t *new;
@@ -23,6 +31,13 @@ listint_t *insertion(listint_t *ptr, int number, int flag)
 	return (new);
 }
 
+/**
+ * insert_node - finds position for a new node in an ordered linked list
+ * @head: the start of the linked list
+ * @number: number to be contained within new node
+ *
+ * Return: Address of newly created node on success, else NULL.
+ */
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *ptr, *next;
