@@ -42,10 +42,10 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *ptr, *next;
 
-	ptr = *head;
-
-	if (!ptr)
+	if (!head || !*head)
 		return (NULL);
+
+	ptr = *head;
 
 	if (number < ptr->n)
 	{
