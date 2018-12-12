@@ -2,10 +2,10 @@
 
 def element_at(my_list, idx):
     if my_list is None or idx is None:
-        return None
+        return
     if idx < 0:
-        return None
+        return
     elif idx > len(my_list):
-        return None
+        return
     else:
         return my_list[idx]
