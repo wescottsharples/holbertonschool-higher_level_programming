@@ -1,0 +1,1 @@
+This is a project about introducing students to Object Oriented Programming in Python. We will be working with classes, defining fields and methods. We aren't going to get into inheritence yet, but that will come soon no doubt. Anyways, thanks for reading.
