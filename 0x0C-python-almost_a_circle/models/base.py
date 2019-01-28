@@ -33,7 +33,7 @@ class Base:
     def create(cls, **dictionary):
         if cls.__name__ is "Rectangle":
             shape = cls(1, 1)
-        if cls.__name__ is "Square":
+        elif cls.__name__ is "Square":
             shape = cls(1)
         shape.update(**dictionary)
         return shape
@@ -58,7 +58,7 @@ class Base:
             return []
         else:
             with open(filename, "r", encoding="utf-8") as f:
-                return [cls.create(**dic) for dic in 
+                return [cls.create(**dic) for dic in
                     cls.from_json_string(f.read())]
 
     @classmethod

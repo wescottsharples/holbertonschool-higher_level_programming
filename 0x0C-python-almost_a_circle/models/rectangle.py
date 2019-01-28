@@ -10,6 +10,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+
     @property
     def x(self):
         return self.__x
@@ -36,7 +37,7 @@ class Rectangle(Base):
     def height(self, value):
         self.integer_validator("height", value)
         self.__height = value
-        
+
     @property
     def width(self):
         return self.__width
@@ -76,12 +77,12 @@ class Rectangle(Base):
     def to_dictionary(self):
         """dictionary"""
         rdict = {
-                "id": self.id,
-                "width": self.width,
-                "height": self.height,
-                "x": self.x,
-                "y": self.y
-                }
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+            }
         return rdict
 
     def __str__(self):
@@ -92,7 +93,7 @@ class Rectangle(Base):
                 format(self.id, self.__x, self.__y, self.__width,
                        self.__height))
 
-""" invalid """
+    """ invalid """
     def integer_validator(self, name, value):
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
