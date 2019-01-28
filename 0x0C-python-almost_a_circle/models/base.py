@@ -2,6 +2,7 @@
 """ contains the base class for geometry modules """
 import json
 import os.path
+import csv
 
 
 class Base:
