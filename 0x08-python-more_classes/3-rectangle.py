@@ -12,6 +12,8 @@ class Rectangle:
 
     def __str__(self):
         """ Prints Rectangle made of #'s """
+        if self.__width is 0 or self.__height is 0:
+            return ""
         return '\n'.join(('#' * self.__width) for _ in range(self.__height))
 
     @property
