@@ -12,7 +12,11 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # select and list states in database
-    cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(argv[4]))
+    cur.execute("
+                SELECT *
+                FROM states
+                WHERE name='{}'
+                ORDER BY id ASC".format(argv[4]))
     states = cur.fetchall()
     for state in states:
         if (state[1] == argv[4]):
