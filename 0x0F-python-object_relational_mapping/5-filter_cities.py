@@ -21,7 +21,7 @@ if __name__ == "__main__":
                 """, (argv[4],))
     states = cur.fetchall()
     for state in states:
-            print(state)
+            print(", ".join(["{}".format(state[0])]))
 
     # cleanup
     cur.close()
