@@ -20,8 +20,7 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC
                 """, (argv[4],))
     states = cur.fetchall()
-    for state in states:
-            print(", ".join(["{}".format(state[0])]))
+    print(", ".join(["{}".format(state[0]) for state in states]))
 
     # cleanup
     cur.close()
