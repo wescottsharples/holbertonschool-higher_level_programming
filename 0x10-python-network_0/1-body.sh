@@ -1,3 +1,3 @@
 #!/bin/bash
-# Curls the body size
+#Script sends a GET request to given URL
 curl -sL "$1"
