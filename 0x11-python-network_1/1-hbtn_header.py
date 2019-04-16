@@ -4,6 +4,7 @@
 from sys import argv
 import urllib.request
 
+
 rq = urllib.request.Request(argv[1])
 with urllib.request.urlopen(rq) as rp:
-    print(rp.getheader('X-Request-Id'))
+    print(rp.getheader("X-Request-Id"))
