@@ -6,6 +6,6 @@ request(url, function (err, r, body) {
     console.log(err);
   } else {
     body = JSON.parse(body);
-    console.log(body['title']);
+    console.log(body.title);
   }
 });
