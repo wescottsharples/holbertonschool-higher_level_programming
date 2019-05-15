@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 let url = 'http://swapi.co/api/movies' + process.argv[2];
-request(url, function (err, r, body) {
+request.get(url, function (err, r, body) {
   if (err) {
     console.log(err);
   } else {
@@ -16,7 +16,5 @@ request(url, function (err, r, body) {
       }
     }
     console.log(count);
-    body = JSON.parse(body);
-    console.log(body.title);
   }
 });
