@@ -4,6 +4,8 @@ let url = 'http://swapi.co/api/movies' + process.argv[2];
 request.get(url, function (err, r, body) {
   if (err) {
     console.log(err);
+  } else if r.statusCode !== 200 {
+    console.log("Error code:" + r.statusCode)
   } else {
     let count = 0;
     let movies = JSON.parse(body).results;
